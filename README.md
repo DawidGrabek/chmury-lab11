@@ -71,3 +71,5 @@ kubectl get pods
 ```
 
 ![alt text](image-4.png)
+Upewnienie się, że Pody są usuwane w odwrotnej kolejności (najwyższy indeks jako pierwszy):
+
