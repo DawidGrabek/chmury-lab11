@@ -38,16 +38,6 @@ Repozytorium zawiera manifesty Kubernetes umożliwiające wdrożenie bazy danych
 
    ![alt text](image-1.png)
 
-4. **Połączenie z MySQL:**
-   Przekierowanie portu 3306 na lokalną maszynę:
-   ```bash
-   kubectl port-forward mysql-0 3306:3306
-   ```
-   Użycie klienta MySQL do połączenia:
-   ```bash
-   mysql -u student -ppassword123 -h 127.0.0.1 -P 3306
-   ```
-
 ## Skalowanie StatefulSet
 
 ### Skalowanie w górę
@@ -81,10 +71,3 @@ kubectl get pods
 ```
 
 ![alt text](image-4.png)
-Upewnienie się, że Pody są usuwane w odwrotnej kolejności (najwyższy indeks jako pierwszy):
-
-## Kluczowe obserwacje
-
-1. **Kolejność inicjalizacji Podów:** Pody są tworzone sekwencyjnie, zachowując porządek.
-2. **Trwałe przechowywanie danych:** Każdy Pod zachowuje swój wolumen, co zapobiega utracie danych.
-3. **Usługa Headless:** Każdy Pod jest dostępny przez DNS, np. `mysql-0.mysql-headless`.
